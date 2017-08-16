@@ -1,0 +1,47 @@
+// Colors for windows border
+$my-blue: #4A90E2;
+$my-purple: #8A4791;
+$my-red: #FD5F54;
+$my-orange: #FF8844;
+$my-green : #5FCF80;
+$my-brown: #755232;
+$my-yellow: #FEDF73;
+
+// Colors for background
+$dark-primary-color: #4A4A4A;
+$primary-color: #D8D8D8;
+$secondary-color: #ECEEED;
+$white-color: #FFFFFF;
+
+// Other colors
+$my-message-color: #BAB7BB;
+
+// Font-faces
+// @include font-face(SquareFont, "/fonts/SquareFont.ttf");
+// @include font-face(ProximaThin, "/fonts/ProximaThin.otf");
+// @include font-face(ProximaBold, "/fonts/ProximaBold.otf");
+
+@font-face {
+  font-family: "SquareFont";
+  src: url('SquareFont.ttf');
+}
+
+@font-face {
+  font-family: "ProximaBold";
+  src: url("ProximaBold.otf");
+}
+
+@font-face {
+  font-family: "ProximaThin";
+  src: url("ProximaThin.otf");
+}
+
+
+// Font-sizes
+$header: 42px;
+$sub-header: 29px; 
+$my-text: 18px;
+$big-btn: 32px;
+$medium-btn: 24px;
+$small-btn: 20px;
+$mini-btn: 16px;

@@ -1,0 +1,24 @@
+<article class="media">
+  <figure class="media-left">
+    <p class="image is-64x64">
+      <img src="/assets/avatar.png" alt="logo">
+    </p>
+  </figure>
+  
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong>Ian</strong><small> @iantran</small>
+        <br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.z
+      </p>
+    </div>
+    <nav class="level is-mobile">
+      <div class="level-left">
+        <%= link_to fa_icon("thumbs-up", text: "Like"), "/", class: "button is-white", method: "post" %>
+        
+        <%= link_to fa_icon("comment", text: "Comment"), "/", class: "button is-white", method: "post" %>
+      </div>
+    </nav>
+  </div>
+</article>

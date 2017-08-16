@@ -14,6 +14,15 @@
  *= require_self
  */
 
-
+ @import "branding";
+ @import "_bulma_variables";
  @import "bulma";
  @import "font-awesome";
+
+ .navbar {
+   background-color: $dark-primary-color;
+ }
+
+body, html {
+   background-color: $primary-color;
+ }
