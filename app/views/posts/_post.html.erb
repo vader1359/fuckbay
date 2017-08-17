@@ -1,24 +1,24 @@
 <article class="media">
-    <figure class="media-left">
-      <p class="image is-64x64">
-        <img src="/assets/avatar.png" alt="logo">
+  <figure class="media-left">
+    <p class="image is-64x64">
+      <img src="/assets/avatar.png" alt="logo">
+    </p>
+  </figure>
+  
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong><%=post.author.email%></strong><small><%= "@#{post.author.email}" %></small>
+        <br>
+        <%= post.body %>
       </p>
-    </figure>
-    
-    <div class="media-content">
-      <div class="content">
-        <p>
-          <strong><%=post.author.email%></strong><small><%= "@#{post.author.email}" %></small>
-          <br>
-          <%= post.body %>
-        </p>
-      </div>
-      <nav class="level is-mobile">
-        <div class="level-left">
-          <%= link_to fa_icon("thumbs-up", text: "Like"), "/", class: "button is-white", method: "post" %>
-          
-          <%= link_to fa_icon("comment", text: "Comment"), "/", class: "button is-white", method: "post" %>
-        </div>
-      </nav>
     </div>
-  </article>
+    <nav class="level is-mobile">
+      <div class="level-left">
+        <%= link_to fa_icon("thumbs-up", text: "Like"), likes_toggle_path(id: post.id), class: "button is-white", method: "post" %>
+        
+        <%= link_to fa_icon("comment", text: "Comment"), "/", class: "button is-white", method: "post" %>
+      </div>
+    </nav>
+  </div>
+</article>
