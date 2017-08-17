@@ -1,1 +1,35 @@
+<%= form_for @post do |f| %> 
+  <div class="field is-horizontal">
+    <div class="field-label is-normal">
+      <label class="label">Add new post</label>
+      <div>
+        <img src="assets/avatar.png" height="64px" width="64px " alt="profile">
+      </div>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control">
+          <%= f.hidden_field :author_id, value: current_user.id %>
+          <%= f.text_area :body, class: "textarea", placeholder: "Type what u wanna post" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field is-horizontal">
+    <div class="field-label">
+      <!-- Left empty for spacing -->
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control">
+          <button class="button is-primary">
+            Post
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 <%= render Post.all %>
