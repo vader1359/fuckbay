@@ -18,4 +18,8 @@ class User < ApplicationRecord
       item.likes.create(user_id: self.id)
     end
   end
+
+  def likes?(post)
+    likes.where(item: post).present? 
+  end
 end

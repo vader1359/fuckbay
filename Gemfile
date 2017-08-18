@@ -41,6 +41,7 @@ gem 'trestle'
 gem 'carrierwave', '~> 1.0'
 gem 'carrierwave-aws'
 gem 'devise'
+gem "slack-notifier"
 
 
 

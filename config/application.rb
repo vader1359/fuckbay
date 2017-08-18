@@ -20,12 +20,30 @@ module Fukbay
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
-
+    
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-
+    
     # Don't generate system test files.
     config.generators.system_tests = nil
+    
+    
+    # Move from config/application.rb to confib/
+    config.action_mailer.asset_host = 'http://localhost:3000'
+    config.action_mailer.delivery_method = :smtp
+    ActionMailer::Base.smtp_settings = {
+      :user_name => ENV["SENDGRID_USERNAME"],
+      :password => ENV["SENDGRID_PASSWORD"],
+      :api_key => ENV["SENDGRID_API_KEY"],
+      :domain => "http://localhost:3000",
+      :address => 'smtp.sendgrid.net',
+      :port => 587,
+      :authentication => :plain,
+      :enable_starttls_auto => true
+    }
   end
+
 end
+
+
