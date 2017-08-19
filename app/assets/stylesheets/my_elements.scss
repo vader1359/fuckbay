@@ -21,6 +21,8 @@
 // THE MATCH IMAGE
 
 .match-img {
+  margin-left: 100px;
+  width: 582px;
   background-color: red;
   height: 120px;
   .blank-part {
@@ -30,19 +32,20 @@
   .color-part {
     display: flex;
     justify-content: space-around;
-    height: 100%;
+    height: 100px;
     
     .left-img {
       margin: -25px;
       margin-left: 10px;
-      width: 100px;
+      width: 121px;
+      height: 121px;
     }
     
     .mid-triangles {
-      height: 120px;
+      height: 121px;
       width: 50px;
       background-color: gray;
-      margin-top: -20px;
+      margin-top: -25px;
       // z-index: -2;
       
       
@@ -78,7 +81,8 @@
     
     .right-img {
       margin: -25px;
-      width: 100px;
+      width: 121px;
+      height: 121px;
       margin-right: 10px;
       
     }
@@ -167,7 +171,7 @@
     background-color: $primary-color;
     height: 510px;
   }
-
+  
   .chat-controller {
     background-color: $primary-color;
     height: 56px;
@@ -178,7 +182,7 @@
       height: 56px;
       width: 385px;
       background-color: $white-color;
-
+      
     }
     .send-btn {
       background-color: $dark-primary-color;
@@ -192,26 +196,60 @@
       line-height: 39px;
       color: $white-color;
       font-size: $medium-btn;
-
+      
     }
   }
   
 }
 
 
-// <div class="chat-box column is-3">
-//   <div class="blank"></div>
-//   <div class="color-part">
-//     <div class="profile-img"></div>
-//     <div class="friend-name"></div>
-//   </div>
-//   <div class="chat-content">
-//     <!-- Chat content comes here -->
-//   </div>
-//   <div class="chat-controller">
-//     <div class="chat-input"></div>
-//     <div class="send-btn"></div>
-//   </div>
+// THE POST
+
+// .post-box {
+//   background-color: red;
+//   height: 120px;
+//   .blank-part {
+//     background-color: blue;
+//     height: 20px;
+//     margin-top: 5px;
+//   }
+//   .color-part {
+//     height: 100px;
+    
+//     .left-img {
+//       margin: -25px;
+//       margin-left: 50px;
+//       width: 100px;
+//       float: left;
+//       z-index: 1;
+//     }
+    
+//     .author-name {
+//       font-size: $header;
+//       color: $white-color;
+//       margin-top: 15px;
+//       margin-left: 50px;
+      
+//     }
+    
+//   }
+
+//   .post-body {
+    
+//     height: 500px;
+//     background-color: green;
+//     margin-top: 10px;
+//   }
+  
+// }
+
+
+// <div class="post-body">
+// <div class="post-content">
+//   <div class="post-text"></div>
+//   <div class="post-img"></div>
+//   <div class="post-reaction"></div>
+// </div>
 // </div>
 
 
