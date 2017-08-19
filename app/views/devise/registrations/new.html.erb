@@ -1,31 +1,86 @@
-<h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<!-- <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+<div class="field">
+  <%= f.email_field :email, autofocus: true %>
+</div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+<div class="field">
+  <%= f.password_field :password, autocomplete: "off" %>
+</div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+<div class="field">
+  <%= f.password_field :password_confirmation, autocomplete: "off" %>
+</div> -->
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+<!-- <div class="actions">
+  <%= f.submit "Sign up" %>
+</div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%= render "devise/shared/links" %> -->
 
 
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= devise_error_messages! %>
+<div class="columns is-centered">
+  <div class="column is-6 form-background">
+    
+    <div class="match-img is-paddingless">
+      <div class="column blank-part"></div>
+      <div class="color-part">
+        <div style="background-color: black" class="left-img">
+          <%= image_tag "avatar.png" %>
+        </div>
+        
+        <div class="mid-triangles">
+          <div class="link-image">
+            <div class="img-in">
+              <%= image_tag "link-icon.png" %>
+            </div>
+            
+          </div>
+          <div class="triangle-left">
+          </div>
+        </div>
+        
+        <div style="background-color: white" class="right-img">
+          <%= image_tag "avatar.png" %>
+        </div>
+      </div>
+    </div>
+    
+    <div class="guide-text"><h2>You don’t have an account yet.<br>Do you want to sign up with</h2></div>
+    
+    <div class="input-items columns is-centered">
+      <div class="column is-8">
+        <div class="field">
+          <div class="control">
+              <%= f.text_field :name, autofocus: true, placeholder: "Name", class: "input input-box" %>
+          </div>
+          <div class="control">
+            <!-- <input class="input input-box" type="text" placeholder="Email">  -->
+            <%= f.email_field :email, placeholder: "Email", class: "input input-box" %>
+          </div>
+          <div class="control">
+            <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "input input-box" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="two-options-btn">
+      <div class="two-btns">
+        <div class="left-btn">
+          No
+        </div>
+        <div class="right-btn">
+            <%= f.submit "Sign up", class: "text-black-btn" %>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+<% end %>

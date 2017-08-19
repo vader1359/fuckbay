@@ -5,47 +5,68 @@
   background-color: $primary-color;
   bottom: 0px;
   position: absolute;
+  height: 720px;
   .guide-text {
     text-align: center;
-    margin-bottom: 30px;
+    font-size: $sub-header;
+    margin-top: 50px;
+    margin-bottom: 70px;
   }
   .input-box {
     box-shadow: none;
     border: none;
     border-color: none;
-    margin-bottom: 10px;
-    font-size: $small-btn;
+    margin-bottom: 15px;
+    height: 68px;
+    font-size: $my-text;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  .two-options-btn {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
   }
 }
 
 // THE MATCH IMAGE
 
 .match-img {
-  margin-left: 100px;
   width: 582px;
-  background-color: red;
+  background-color: rgba(1, 1, 1, 0);
   height: 120px;
+  margin-top: -35px;
+  margin-left: auto;
+  margin-right: auto;
   .blank-part {
-    background-color: blue;
+    background-color: rgba(1, 1, 1, 0);
     height: 20px;
   }
   .color-part {
     display: flex;
     justify-content: space-around;
     height: 100px;
+    background-color: red;
+    background: linear-gradient(90deg, #4A90E2 50%, #FF8844 50%);
     
     .left-img {
       margin: -25px;
       margin-left: 10px;
-      width: 121px;
-      height: 121px;
+      width: 125px;
+      height: 125px;
+      padding: 5px;
+      background-color: #4A90E2 !important;
+
+      
     }
     
+    
     .mid-triangles {
-      height: 121px;
+      height: 100px;
       width: 50px;
-      background-color: gray;
-      margin-top: -25px;
+      background-color: #FF8844;
+      // margin-top: -25px;
       // z-index: -2;
       
       
@@ -53,22 +74,22 @@
         width: 0;
         height: 0;
         border-style: solid;
-        border-width: 120px 50px 0 0;
-        border-color: #007bff transparent transparent transparent;
+        border-width: 100px 50px 0 0;
+        border-color: #4A90E2 transparent transparent transparent;
         z-index: -1;
         
       }
       
       .link-image {
         width: 50px;
-        height: 120px;
+        height: 100px;
         background-color: rgba(1, 1, 1, 0);
         float: left;
         .img-in {
           width: 30px;
           height: 30px;
           position: relative;
-          background-color: black;
+          background-color: rgba(1, 1, 1, 0);
           top: 50%;
           transform: translateY(-50%);
           margin: auto;
@@ -81,9 +102,11 @@
     
     .right-img {
       margin: -25px;
-      width: 121px;
-      height: 121px;
+      width: 125px;
+      height: 125px;
       margin-right: 10px;
+      padding: 5px;
+      background-color: #FF8844 !important;
       
     }
   }
@@ -202,58 +225,68 @@
   
 }
 
+.text-black-btn {
+  border: none;
+  background-color: rgba(1, 1, 1, 0);
+  color: $white-color;
+  font-size: $big-btn;
+  margin-bottom: 3px;
+}
+
 
 // THE POST
 
 // .post-box {
-//   background-color: red;
-//   height: 120px;
-//   .blank-part {
-//     background-color: blue;
-//     height: 20px;
-//     margin-top: 5px;
-//   }
-//   .color-part {
-//     height: 100px;
-    
-//     .left-img {
-//       margin: -25px;
-//       margin-left: 50px;
-//       width: 100px;
-//       float: left;
-//       z-index: 1;
-//     }
-    
-//     .author-name {
-//       font-size: $header;
-//       color: $white-color;
-//       margin-top: 15px;
-//       margin-left: 50px;
+  //   background-color: red;
+  //   height: 120px;
+  //   .blank-part {
+    //     background-color: blue;
+    //     height: 20px;
+    //     margin-top: 5px;
+    //   }
+    //   .color-part {
+      //     height: 100px;
       
-//     }
-    
-//   }
-
-//   .post-body {
-    
-//     height: 500px;
-//     background-color: green;
-//     margin-top: 10px;
-//   }
-  
-// }
-
-
-// <div class="post-body">
-// <div class="post-content">
-//   <div class="post-text"></div>
-//   <div class="post-img"></div>
-//   <div class="post-reaction"></div>
-// </div>
-// </div>
-
-
-
-
-
+      //     .left-img {
+        //       margin: -25px;
+        //       margin-left: 50px;
+        //       width: 100px;
+        //       float: left;
+        //       z-index: 1;
+        //     }
+        
+        //     .author-name {
+          //       font-size: $header;
+          //       color: $white-color;
+          //       margin-top: 15px;
+          //       margin-left: 50px;
+          
+          //     }
+          
+          //   }
+          
+          //   .post-body {
+            
+            //     height: 500px;
+            //     background-color: green;
+            //     margin-top: 10px;
+            //   }
+            
+            // }
+            
+            
+            // <div class="post-body">
+            // <div class="post-content">
+            //   <div class="post-text"></div>
+            //   <div class="post-img"></div>
+            //   <div class="post-reaction"></div>
+            // </div>
+            // </div>
+            
+            
+            
+            
+            
+            
+            
 
