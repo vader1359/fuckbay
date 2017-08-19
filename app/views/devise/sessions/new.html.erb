@@ -1,26 +1,61 @@
-<h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<%= devise_error_messages! %>
+<div class="columns is-centered">
+  <div class="column is-6 form-background">
+    
+    <div class="match-img is-paddingless">
+      <div class="column blank-part"></div>
+      <div class="color-part">
+        <div style="background-color: black" class="left-img">
+          <%= image_tag "avatar.png" %>
+        </div>
+        
+        <div class="mid-triangles">
+          <div class="link-image">
+            <div class="img-in">
+              <%= image_tag "link-icon.png" %>
+            </div>
+            
+          </div>
+          <div class="triangle-left">
+          </div>
+        </div>
+        
+        <div style="background-color: white" class="right-img">
+          <%= image_tag "avatar.png" %>
+        </div>
+      </div>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    
+    <div class="guide-text"><h2>You don’t have an account yet.<br>Do you want to sign up with</h2></div>
+    
+    <div class="input-items columns is-centered">
+      <div class="column is-8">
+        <div class="field">
+          <div class="control">
+            <!-- <input class="input input-box" type="text" placeholder="Email">  -->
+            <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "input input-box" %>
+          </div>
+          <div class="control">
+            <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "input input-box" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="two-options-btn">
+      <div class="two-btns">
+        <div class="left-btn">
+          <%= link_to "Sign up", new_user_registration_path, class: "text-white-btn" %>
+        </div>
+        <div class="right-btn">
+            <%= f.submit "Sign in", class: "text-black-btn" %>
+        </div>
+      </div>
+    </div>
+    
   </div>
+</div>
 <% end %>
 
-<%= render "devise/shared/links" %>
