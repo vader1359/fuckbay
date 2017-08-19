@@ -1,3 +1,29 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.nav-logo {
+  margin-left: 20px;
+  margin-top: 40px;
+}
+
+.friend-list {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.welcome-img {
+  margin-top: 80px;
+  margin-left: 250px;
+  z-index: -1;
+}
+
+.welcome.two-options-btn {
+  float: right;
+  right: 320px;
+  z-index: 1000;
+  margin-top: -180px;
+  position: absolute;
+}

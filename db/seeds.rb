@@ -6,6 +6,3 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-ian = User.create(name: "Ian", email: "ian@gmail.com", password: "abcdef")
-post1 = ian.posts.create(body: "I have a dream")
-post2 = ian.posts.create(body: "A song to sing")

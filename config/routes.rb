@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post "likes/toggle" # For like/unlike a post/users/comments
   get "/test" => "users#test" # For testing UI
 
+  get "/welcome" => "users#welcome"
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

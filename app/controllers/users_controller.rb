@@ -5,4 +5,7 @@ class UsersController < ApplicationController
   end
   def test
   end
+  
+  def welcome
+  end
 end
