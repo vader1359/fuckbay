@@ -36,7 +36,9 @@
   margin-right: auto;
   margin-top: -20px;
   margin-bottom: 80px;
-
+  overflow-y: auto;
+  
+  
   .adding-friend {
     width: 470px;
     height: 70px;
@@ -45,8 +47,8 @@
     align-items: center;
     position: relative;
     margin-bottom: 15px;
-
-  
+    
+    
     .friend-img {
       width: 70px;
       height: 70px;
@@ -55,7 +57,7 @@
       justify-content: flex-start;
       
     }
-  
+    
     .friend-name {
       font-size: $big-btn;
       color: $dark-primary-color;
@@ -64,7 +66,7 @@
       justify-content: flex-start;
       margin-left: 30px;
     }
-  
+    
     .toggle-friend-btn-add {
       width: 88px;
       height: 40px;
@@ -75,16 +77,16 @@
       right: 0px;
       font-size: $medium-btn;
       text-align: center;
-
+      
       a {
         color: $white_color;
       }
       .text-white-mini-btn {
         font-size: $medium-btn;
-      
+        
       }
-  
-  
+      
+      
     }
     
     .toggle-friend-btn-remove{
@@ -99,7 +101,7 @@
       right: 0px;
       font-size: $small-btn;
       text-align: center;
-
+      
       a {
         color: $dark-primary-color;
         background-color: $primary-color;
@@ -109,11 +111,11 @@
       }
       .text-white-mini-btn {
         font-size: $small-btn;
-      
+        
       }
-
+      
     }
-  
+    
   }
 }
 
@@ -126,7 +128,7 @@
     left: 0px;
     margin-bottom: 0px;
   }
-
+  
   .newsfeed-btn {
     width: 64px;
     height: 64px;
@@ -142,4 +144,73 @@
   }
 }
 
+.friend_list {
+  width: 900px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  box-shadow:  #888888;
+  img {
+    margin-left: 0px;
+    width: 84px;
+    height: 84px;
+    float: right;
+    z-index: 1;
+    box-shadow: 10px;
+  }
+}
 
+
+.chat-content {
+  padding: 20px;
+  padding-top: 30px;
+  overflow: auto;
+  
+  .received-message-box {
+    background-color: rgba(1, 1, 1, 0);
+    width: 430px;
+    height: 45px;
+    display: flex;
+    line-height: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: row-reverse;
+    margin-bottom: 15px;
+
+    .received-message{
+      text-align: right;
+      font-size: $my-text;
+      padding-right: 15px;
+      padding-left: 15px;
+      background-color: $dark-primary-color;
+      color: $white-color;
+      
+    }
+  }
+  
+  
+  .sent-message-box {
+    background-color: rgba(1, 1, 1, 0);
+    // background-color: blue;
+    width: 430px;
+    height: 45px;
+    display: flex;
+    line-height: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: row;
+    margin-bottom: 15px;
+    .sent-message {
+      text-align: left;
+      font-size: $my-text;
+      padding-right: 15px;
+      padding-left: 15px;
+      background-color: #B9B7BA;
+      color: $dark-primary-color;
+      
+    }
+  }
+  
+  
+  
+}

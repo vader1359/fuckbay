@@ -22,6 +22,8 @@ class FriendshipsController < ApplicationController
 
     redirect_to new_friendship_path
   end
+
+  
   
 end
 

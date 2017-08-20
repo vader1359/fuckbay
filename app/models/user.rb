@@ -3,12 +3,15 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   validates :name, presence: true
-  has_many :posts, foreign_key: :author_id
+  has_many :posts, foreign_key: :author_id, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable
+
+  has_many :received_messages, foreign_key: :recipient_id, class_name: "Message"
+  has_many :sent_messages, foreign_key: :sender_id, class_name: "Message"
   
   
   def self.generate_users(n)
@@ -35,4 +38,20 @@ class User < ApplicationRecord
   def likes?(post)
     likes.where(item: post).present? 
   end
+
+  def my_messages_with(friend_id)
+    received_messages = Message.where("sender_id = ? and recipient_id = ?", friend_id, self.id)
+    sent_messages = Message.where("sender_id = ? and recipient_id = ?", self.id, friend_id)
+    messages = received_messages + sent_messages
+    messages.sort_by! {|message| message.created_at}
+  # messages = Message.where("(sender_id = ? AND recipient_id = ?) OR (sender_id = ? and recipient_id = ?)", friend_id, id, id, friend_id).order("updated_at DESC")
+  end
+
 end
+\
+# 11-08-39
+# 11-09-23
+# 11-11-10
+# 11-08-52
+# 11-09-02
+# 11-09-11

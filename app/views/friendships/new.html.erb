@@ -33,7 +33,7 @@
 
     
     <div class="friends-to-add">
-      <% User.all[0..3].each do |user| %>
+      <% User.all.each do |user| %>
       
       <div class="adding-friend">
         <div class="friend-img">
@@ -62,7 +62,7 @@
           Back
         </div>
         <div class="right-btn">
-          Next
+          <%=link_to "Next", users_path, class: "text-black-btn" %>
         </div>
       </div>
     </div>

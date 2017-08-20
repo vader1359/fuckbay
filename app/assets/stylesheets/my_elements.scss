@@ -1,5 +1,6 @@
 @import "branding";
 
+
 // THE FORM
 .form-background { 
   background-color: $primary-color;
@@ -11,6 +12,7 @@
     font-size: $sub-header;
     margin-top: 50px;
     margin-bottom: 70px;
+    font-weight: bolder;
   }
   .input-box {
     box-shadow: none;
@@ -158,26 +160,30 @@
   padding-left: 0px;
   padding-right: 0px;
   margin-left: 500px;
-  height: 715px;
-  background: black;
+  height: 660px;
+  background: rgba(1, 1, 1, 0);
+  bottom: 0px;
+  position: absolute;
   .blank-part {
-    background-color: blue;
+    background-color: rgba(1, 1, 1, 0);
     height: 20px;
   }
   .color-part {
     height: 122px;
-    background-color: gray;
+    background-color: $dark-primary-color;
     position: relative;
     display: flex;
     
     .profile-img {
       width: 142px;
       height: 142px;
-      background-color: red;
+      background-color: $dark-primary-color;
       float: left;
       margin-top: -20px;
       position: absolute;
-      left: 40px;
+      left: 35px;
+      padding: 7px;
+
     }
     .friend-name {
       height: 122px;
@@ -186,13 +192,14 @@
       display: flex;
       color: white;
       position: absolute;
-      left: 210px;
+      left: 200px;
+      font-family: "SquareFont";
       
     }  
   }
   .chat-content {
     background-color: $primary-color;
-    height: 510px;
+    height: 450px;
   }
   
   .chat-controller {
@@ -211,6 +218,7 @@
       background-color: $dark-primary-color;
       position: absolute;
       right: 0px;
+      border: none;
       width: 88px;
       height: 39px;
       top: 50%;
@@ -219,6 +227,7 @@
       line-height: 39px;
       color: $white-color;
       font-size: $medium-btn;
+      font-weight: 500;
       
     }
   }
@@ -240,6 +249,8 @@
   font-size: $small-btn;
   margin-bottom: 3px;
 }
+
+
 
 
 // THE POST

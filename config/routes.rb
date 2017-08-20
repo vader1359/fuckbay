@@ -11,10 +11,11 @@ Rails.application.routes.draw do
   get "/add_friends" => "friendships#new"
   
 
-
   resources :posts # Restful routes for posts
   post "likes/toggle" # For like/unlike a post/users/comments
- 
+
+  get "/messages" => "messages#index"
+  post "/messages/create" => "messages#create"
 
   
 

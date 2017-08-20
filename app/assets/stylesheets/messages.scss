@@ -1,0 +1,15 @@
+// Place all the styles related to the messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'branding';
+
+.input-message {
+  font-size: $medium-btn;
+  height: 56px;
+  width: 370px;
+  border: none;
+  margin-left: 15px;
+  outline: none;
+  color: $dark-primary-color;
+}
