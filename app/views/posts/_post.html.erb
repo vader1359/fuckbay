@@ -15,7 +15,7 @@
     </div>
     <nav class="level is-mobile">
       <div class="level-left">
-        <%= link_to fa_icon("thumbs-up", text: "Like"), likes_toggle_path(id: post.id), class: "button is-white #{'is-liked' if current_user.likes?(post)}", remote: true, method: "post" %>
+        <%= link_to fa_icon("thumbs-up", text: "Like"), likes_toggle_path(id: post.id), class: "button is-white #{'is-liked' if current_user.likes?(post)}", method: "post" %>
         
         <%= link_to fa_icon("comment", text: "Comment"), "/", class: "button is-white", method: "post" %>
       </div>

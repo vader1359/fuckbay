@@ -214,3 +214,30 @@
   
   
 }
+
+.content-part {
+  width :1647px;
+  height: 762px;
+  background-color: $primary-color;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  overflow: auto;
+  .post-content {
+
+  }
+  .suggest-content {
+    background-color: $dark-primary-color;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width :479px;
+    height: 762px;
+  }
+}
+
+// <div class="content-part">
+// <div class="post-content"></div>
+// <div class="suggest-content"></div>
+// </div>
+

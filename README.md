@@ -16,27 +16,27 @@ The following **required** functionality is complete:
 **GENERAL PART**
 * [x] User can sign up by providing their email, password, and name. 
 * [x] User can login using an email and password. 
-* [ ] Clicking the "add friends" link takes the user to a page with all users listed, with a link to "add user to friends list". 
-* [ ] After logging in, the user is taken to a Newsfeed page that has a list of incoming posts, sorted in descending chronological order (newest messages at top)
+* [x]  Clicking the "add friends" link takes the user to a page with all users listed, with a link to "add user to friends list". 
+* [x] After logging in, the user is taken to a Newsfeed page that has a list of incoming posts, sorted in descending chronological order (newest messages at top)
 
 The following **optional** functionality is complete:
-* [ ] Add UI
+* [x] Add UI
 * [ ] User can attach an image as profile Img.
 * [ ] User can log in with Facebook. 
 * [ ] User A can "block" User B. If User A blocks User B, they will not see messages from User B. User B will not know they have been blocked.
-* [ ] User can remove friends from their friends list.
+* [x] User can remove friends from their friends list.
 * [ ] User can unblock friends from their block list.
-* [ ] Write as many test as possible
+* [x] Write as many test as possible
 * [ ] Using ajax to transfer data from the View to the Backend
 
 **POST PART**
 
-* [ ] A user wall should list all the post from that Users
+* [x] A user wall should list all the post from that Users
 * [ ] User can see other user wall
-* [ ] After logging in, the user is taken to a Newsfeed page that has a list of posts from his friends, sorted in descending chronological order (newest messages at top)
-* [ ] User can create a new Post
+* [x] After logging in, the user is taken to a Newsfeed page that has a list of posts from his friends, sorted in descending chronological order (newest messages at top)
+* [x] User can create a new Post
 * [ ] user can post on another user's wall 
-* [ ] User can like or unlike a post
+* [x] User can like or unlike a post
 * [ ] User can comment on a post
 * [ ] Implement User profile pages
 
@@ -47,15 +47,18 @@ The following **optional** functionality is complete:
 
 
 **MESSAGE PART**
-* [ ] Click the "Messages" buttons will takes user to the chat page.
-* [ ] User can send a message to other users
+* [x] Click the "Messages" buttons will takes user to the chat page.
+* [x] User can send a message to other users
 * [ ] Unread messages should be **bold** or something similar in the list of messages. 
 * [ ] Implement the "Seen" function (Ex: Seen at 2 hours ago)
-* [ ] User can only read messages where they are the recipient.
+* [x] User can only read messages where they are the recipient.
+* [x] A notification sent to Slack when a new post created.
 
 
 The following **optional** functionality is complete:
-* [ ] User can have multiple recipients on one message. 
+* [x] Add my UI
+* [x] Create template for components of the website (but failed)
+* [x] Implement a Friend list on the to right
 
 
 **EMAIL PART**
