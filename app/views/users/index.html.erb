@@ -33,3 +33,17 @@
 <% end %>
 
 <%= render Post.all %>
+
+<div class="nav-bar">
+  <div class="user-profile">
+    <%= image_tag current_user.profile_url %>
+  </div>
+  <div class="newsfeed-btn">
+    <%= link_to image_tag("news_feed.png"), users_path  %>
+  </div>
+  <div class="messages-btn">
+      <%= link_to image_tag("messages.png"), users_path  %>
+
+  </div>
+</div>
+

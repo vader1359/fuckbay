@@ -1,7 +1,7 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+@import 'branding';
 
 .nav-logo {
   margin-left: 20px;
@@ -27,3 +27,119 @@
   margin-top: -180px;
   position: absolute;
 }
+
+.friends-to-add {
+  width: 470px;
+  height: 316px;
+  background-color: rgba(1, 1, 1, 0);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -20px;
+  margin-bottom: 80px;
+
+  .adding-friend {
+    width: 470px;
+    height: 70px;
+    background: rgba(1, 1, 1, 0);
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 15px;
+
+  
+    .friend-img {
+      width: 70px;
+      height: 70px;
+      background-color: #4A90E2;
+      padding: 3px;
+      justify-content: flex-start;
+      
+    }
+  
+    .friend-name {
+      font-size: $big-btn;
+      color: $dark-primary-color;
+      height: 70px;
+      line-height: 70px;
+      justify-content: flex-start;
+      margin-left: 30px;
+    }
+  
+    .toggle-friend-btn-add {
+      width: 88px;
+      height: 40px;
+      line-height: 40px;
+      background-color: $dark-primary-color;
+      color: $white-color;
+      position: absolute;
+      right: 0px;
+      font-size: $medium-btn;
+      text-align: center;
+
+      a {
+        color: $white_color;
+      }
+      .text-white-mini-btn {
+        font-size: $medium-btn;
+      
+      }
+  
+  
+    }
+    
+    .toggle-friend-btn-remove{
+      width: 88px;
+      height: 40px;
+      line-height: 40px;
+      background-color: $dark-primary-color;
+      color: $dark-primary-color;
+      border-color: $dark-primary-color;
+      
+      position: absolute;
+      right: 0px;
+      font-size: $small-btn;
+      text-align: center;
+
+      a {
+        color: $dark-primary-color;
+        background-color: $primary-color;
+        padding: 6px;
+        padding-left: 9px;
+        padding-right: 9px;
+      }
+      .text-white-mini-btn {
+        font-size: $small-btn;
+      
+      }
+
+    }
+  
+  }
+}
+
+.nav-bar {
+  .user-profile {
+    width: 128px;
+    height: 128px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    margin-bottom: 0px;
+  }
+
+  .newsfeed-btn {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    bottom: 150px;
+  }
+  
+  .messages-btn {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    bottom: 220px;
+  }
+}
+
+

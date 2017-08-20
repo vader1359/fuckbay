@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   validates :name, presence: true
@@ -10,6 +11,18 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :trackable, :validatable
   
   
+  def self.generate_users(n)
+    url = "https://randomuser.me/api?results=#{n}"
+    response = HTTP.get(url)
+    data = response.parse
+    people = data["results"]
+    people.each do |person|
+      name = person["name"]["first"] + " " + person["name"]["last"]
+      User.create! name: name.titleize, email: person["email"], password: "abcdef",
+      profile_url: person["picture"]["large"]
+    end
+  end
+  
   def toggle_like!(item)
     like = item.likes.where(user_id: self.id).last
     if like.present?
@@ -18,7 +31,7 @@ class User < ApplicationRecord
       item.likes.create(user_id: self.id)
     end
   end
-
+  
   def likes?(post)
     likes.where(item: post).present? 
   end

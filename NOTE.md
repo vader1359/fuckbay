@@ -1,2 +1,4 @@
 **WHAT SHOULD I DO NOW?**
-- Finish the Welcome page
+* [x] Finish welcome page
+* [x] Handle generate user
+* [ ] Handle add friend page

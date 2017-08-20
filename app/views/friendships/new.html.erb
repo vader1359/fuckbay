@@ -1,0 +1,71 @@
+<div class="friend-list">
+  <img src="/assets/friend_list.png" alt="friend list">
+</div>
+
+<div class="columns is-centered">
+  <div class="column is-6 form-background">
+    
+    <div class="match-img is-paddingless">
+      <div class="column blank-part"></div>
+      <div class="color-part">
+        <div style="background-color: black" class="left-img">
+          <%= image_tag current_user.profile_url %>
+        </div>
+        
+        <div class="mid-triangles">
+          <div class="link-image">
+            <div class="img-in">
+              <%= image_tag "link-icon.png" %>
+            </div>
+            
+          </div>
+          <div class="triangle-left">
+          </div>
+        </div>
+        
+        <div style="background-color: white" class="right-img">
+          <%= image_tag User.all.sample.profile_url %>
+        </div>
+      </div>
+    </div>
+    
+    <div class="guide-text"><h2>Add some friends to your list</h2></div>
+
+    
+    <div class="friends-to-add">
+      <% User.all[0..3].each do |user| %>
+      
+      <div class="adding-friend">
+        <div class="friend-img">
+          <%= image_tag user.profile_url %> 
+        </div>
+        <div class="friend-name"><%= user.name %></div>
+        <% if Friendship.where(["user_id = ? and friend_id = ?", current_user.id, user.id]).present? %>
+          <div class="toggle-friend-btn-remove">
+            <%=link_to "Remove", friendships_path(user_id: current_user.id, friend_id: user.id), method: "post", class: "text-white-mini-btn" %>
+          </div>
+        <% else %>
+          <div class="toggle-friend-btn-add">
+            <%=link_to "Add", friendships_path(user_id: current_user.id, friend_id: user.id), method: "post", class: "text-black-mini-btn" %>
+          </div>
+        <% end %>
+        
+      </div>
+      
+      
+      <% end %>
+    </div>
+    
+    <div class="two-options-btn">
+      <div class="two-btns">
+        <div class="left-btn">
+          Back
+        </div>
+        <div class="right-btn">
+          Next
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
