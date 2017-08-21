@@ -1,6 +1,8 @@
-<div class="friend-list">
-  <img src="/assets/friend_list.png" alt="friend list">
-</div>
+<div class="friend_list">
+    <% @friend_list_img.each do |image| %>
+    <%= image_tag "#{image}" %>
+    <% end %>
+  </div>
 
 <div class="columns is-centered">
   <div class="column is-6 form-background">
@@ -24,7 +26,7 @@
         </div>
         
         <div style="background-color: white" class="right-img">
-          <%= image_tag User.all.sample.profile_url %>
+          <%= image_tag User.first.profile_url %>
         </div>
       </div>
     </div>
