@@ -3,5 +3,6 @@
 * [x] Handle generate user
 * [x] Handle add friend page
 * [x] Add arrays of friends on the top
-* [ ] HANDLE THE MESSAGES
+* [x] HANDLE THE MESSAGES
+* [ ] HANDLE THE WALL
   

@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
     friend_ids.map {|id| User.find(id).profile_url}
   end
 
+  def make_friend_list
+    @friend_list_img = list_friendship_img(current_user)
+  end
+
 end

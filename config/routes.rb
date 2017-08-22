@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   get "/test" => "users#test" # For testing UI
 
   devise_for :users # This handle all the Login, Log up, Log out and Forget password problem.
-  resources :users # Restful routes for users
+  get "/newsfeed" => "users#newsfeed"
+  resources :users do # Restful routes for users
+    resources :walls, only: [:index, :create]
+  end
   get "/welcome" => "users#welcome"
   
 
@@ -16,6 +19,7 @@ Rails.application.routes.draw do
 
   get "/messages" => "messages#index"
   post "/messages/create" => "messages#create"
+
 
   
 

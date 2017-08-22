@@ -1,1 +1,3 @@
-<%= render Post.all%>
+<%= link_to "HELLO", user_wall_path(user_id: User.first, id: User.first.wall.id) %>
+<%= render Post.all %>
+
