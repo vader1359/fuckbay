@@ -15,7 +15,6 @@ class UsersController < ApplicationController
     
     my_posts = current_user.posts
     my_friends = current_user.friends
-    wall_friend_posts = wall_friends.map {|friend| ([] << fr
   end
   
   def list_friendship_img(user)

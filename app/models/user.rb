@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
-  has_one :wall
+  has_one :wall, dependent: :destroy
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable
 
@@ -25,6 +25,7 @@ class User < ApplicationRecord
       User.create! name: name.titleize, email: person["email"], password: "abcdef",
       profile_url: person["picture"]["large"]
     end
+    # User.all.each do {|user| user.wall.create}
   end
   
   def toggle_like!(item)
@@ -49,7 +50,6 @@ class User < ApplicationRecord
   end
 
 end
-\
 # 11-08-39
 # 11-09-23
 # 11-11-10
