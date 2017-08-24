@@ -1,0 +1,40 @@
+<div class="chat-box column is-3">
+    <div class="blank-part"></div>
+    <div class="color-part">
+      <div class="profile-img">
+        <%= image_tag friend.profile_url %>
+      </div>
+      <div class="friend-name"><%= friend.name %></div>
+    </div>
+    <div class="chat-content">
+      <!-- Chat content comes here -->
+      <% current_user.my_messages_with(friend.id).each do |message| %>
+      <% if message.is_received_message? %>
+      <div class="received-message-box">
+        <div class="received-message">
+          <%= message.body %>
+        </div>
+      </div>
+      <% else %>
+      <div class="sent-message-box">
+        <div class="sent-message">
+          <%= message.body %>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+    <div class="chat-controller">
+      <%= form_tag messages_create_path do %>
+        <div class="chat-input">
+          <%= text_field_tag "message", nil, placeholder: "Add new message", class: "input-message"  %>
+          <%= hidden_field_tag :sender_id, current_user.id %>
+          <%= hidden_field_tag :recipient_id, friend.id %>
+        </div>
+        <div class="send-btn">
+          <%= submit_tag "SEND", class: "send-btn" %>
+          <!-- messages_create_path(sender_id: current_user.id, recipient_id: User.last.id), method: "post", -->
+        </div>  
+      <% end %>
+    </div>
+  </div>

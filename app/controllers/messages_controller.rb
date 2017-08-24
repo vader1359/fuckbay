@@ -1,6 +1,8 @@
 class MessagesController < ApplicationController
   def index
     @friend_list_img = list_friendship_img(current_user)
+
+    @chatting_friends = [User.third, User.second]
     
   end
 

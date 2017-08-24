@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+
+  post 'comments/create'
+
   get "/test" => "users#test" # For testing UI
 
   devise_for :users # This handle all the Login, Log up, Log out and Forget password problem.

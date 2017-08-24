@@ -3,7 +3,11 @@ class UsersController < ApplicationController
   def index
     @post = Post.new
     @friend_list_img = list_friendship_img(current_user)
-    raise
+    my_posts = current_user.posts
+    my_friends = current_user.friends
+    my_friend_posts = my_friends.map {|friend| ([] << friend.posts)}
+    @newsfeed_posts = my_posts + my_friend_posts.flatten
+    @newsfeed_posts.sort_by! {|post| post.updated_at}
   end
   def test
   end

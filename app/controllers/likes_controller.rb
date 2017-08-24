@@ -1,6 +1,11 @@
 class LikesController < ApplicationController
   def toggle
-    current_user.toggle_like!(Post.find(params[:id]))
+    if params[:item_type] == "post"
+      current_user.toggle_like!(Post.find(params[:id]))
+    elsif
+      params[:item_type] == "comment"
+      current_user.toggle_like!(Comment.find(params[:id]))
+    end
     # else
     #   redirect_to new_user_session_path
     # end
