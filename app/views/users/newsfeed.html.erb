@@ -6,7 +6,14 @@
 
 <div class="posts">
   <% @newsfeed_posts.each do |post| %>
-    <div><%= post.body %></div>
+    <div>
+        <strong><%=  post.body  %></strong>
+        <div><%="like_post: #{post.likes.count}"%></div>
+      <% post.comments.each do |comment| %>
+        <span><%=comment.body%></span><span><%=" like_comment: #{comment.likes.count}"%></span>
+        
+      <% end %>
+    </div>
   <% end %>
 </div>
 
