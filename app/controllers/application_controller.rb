@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :check_current_user, except: [:welcome]
+
   protect_from_forgery with: :exception
   helper_method :list_friendship_img
   
@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
 
   def check_current_user
     if !current_user.present?
-      redirect_to welcome_path
+      redirect_to "/sign_in"
     end
     
   end

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   # before_action :list_friendship_img
+  # skip_before_filter :authenticate_user!
   def index
     # @post = Post.new
     if current_user.present?
