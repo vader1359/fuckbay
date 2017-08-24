@@ -11,9 +11,9 @@ User.generate_users(10)
 user_f = User.first
 user_l = User.last
 
-2.times {User.all.sample.posts.create(body: "What ever you want", wall_id: User.first.wall.id)}
-2.times {User.all.sample.posts.create(body: "Do you need help", wall_id: User.all[3].wall.id)}
-2.times {User.all.sample.posts.create(body: "Me, I need help", wall_id: User.last.wall.id)}
+2.times {User.first.posts.create(body: "Post from the first", wall_id: User.first.id)}
+2.times {User.all.sample.posts.create(body: "Do you need help", wall_id: User.all[3].id)}
+2.times {User.all.sample.posts.create(body: "Me, I need help", wall_id: User.last.id)}
 
 
 user_f.sent_messages.create(sender_id: user_f.id, recipient_id: user_l.id, body: "I have a dream")

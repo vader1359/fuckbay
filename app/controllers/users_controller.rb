@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
+  # before_action :list_friendship_img
   def index
     @post = Post.new
     @friend_list_img = list_friendship_img(current_user)
-    # raise
+    raise
   end
   def test
   end
@@ -11,17 +12,19 @@ class UsersController < ApplicationController
   end
   
   def newsfeed
-    @friend_list_img = list_friendship_img(current_user)
-    
-    my_posts = current_user.posts
-    my_friends = current_user.friends
   end
   
-  def list_friendship_img(user)
-    friendship_list = Friendship.where("user_id = #{user.id}")
-    friend_ids = friendship_list.map {|friendship| friendship.friend_id }
-    friend_ids.map {|id| User.find(id).profile_url}
+  def show
+    @friend_list_img = list_friendship_img(current_user)
+
+    wall_user = User.find(params[:id])
+    @user = User.new
+    wall_posts = wall_user.posts
+    wall_friends = wall_user.friends
+    wall_friend_posts = wall_friends.map {|friend| ([] << friend.posts)}
+    @wall_posts = wall_posts + wall_friend_posts.flatten
   end
+  
   
   
   

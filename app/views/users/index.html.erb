@@ -9,7 +9,12 @@
 
 <div class="nav-bar">
   <div class="user-profile">
-    <%= image_tag current_user.profile_url %>
+    <% if current_user.present? %>
+      <%= image_tag current_user.profile_url %>
+    <% else %>
+      <%= image_tag "avatar.png" %>
+    <% end %>
+
   </div>
   <div class="newsfeed-btn">
     <%= link_to image_tag("news_feed.png"), users_path, style: "filter: invert(80%)"  %>
