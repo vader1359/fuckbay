@@ -4,11 +4,14 @@
 // THE FORM
 .form-background { 
   background-color: $primary-color;
+  min-width: 560px;
   bottom: 0px;
   position: absolute;
-  height: 720px;
+  height: 66%;
   .guide-text {
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     font-size: $sub-header;
     margin-top: 50px;
     margin-bottom: 70px;
@@ -35,7 +38,7 @@
 // THE MATCH IMAGE
 
 .match-img {
-  width: 582px;
+  min-width: 380px;
   background-color: rgba(1, 1, 1, 0);
   height: 120px;
   margin-top: -35px;

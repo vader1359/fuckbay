@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :check_current_user, except: [:welcome]
   protect_from_forgery with: :exception
   helper_method :list_friendship_img
   
@@ -19,6 +20,13 @@ class ApplicationController < ActionController::Base
   
   def make_friend_list
     @friend_list_img = list_friendship_img(current_user)
+  end
+
+  def check_current_user
+    if !current_user.present?
+      redirect_to welcome_path
+    end
+    
   end
   
 end

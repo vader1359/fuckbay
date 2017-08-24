@@ -29,5 +29,5 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root "users#welcome" # This lead to the timeline page
+  root "users#index" # This lead to the timeline page
 end
