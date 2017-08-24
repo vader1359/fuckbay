@@ -1,5 +1,12 @@
 <div class="friend_list">
-    <% @friend_list_img.each do |image| %>
+  <% @friend_list_img.each do |image| %>
     <%= image_tag "#{image}" %>
-    <% end %>
-  </div>
+  <% end %>
+</div>
+
+<div class="posts">
+  <% @newsfeed_posts.each do |post| %>
+    <div><%= post.body %></div>
+  <% end %>
+</div>
+

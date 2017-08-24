@@ -12,17 +12,24 @@ class UsersController < ApplicationController
   end
   
   def newsfeed
+    @friend_list_img = list_friendship_img(current_user)
+    my_posts = current_user.posts
+    my_friends = current_user.friends
+    my_friend_posts = my_friends.map {|friend| ([] << friend.posts)}
+    @newsfeed_posts = my_posts + my_friend_posts.flatten
+    @newsfeed_posts.sort_by! {|post| post.updated_at}
+
   end
-  
+
   def show
     @friend_list_img = list_friendship_img(current_user)
 
     wall_user = User.find(params[:id])
-    @user = User.new
     wall_posts = wall_user.posts
     wall_friends = wall_user.friends
     wall_friend_posts = wall_friends.map {|friend| ([] << friend.posts)}
     @wall_posts = wall_posts + wall_friend_posts.flatten
+    @wall_posts.sort_by! {|post| post.updated_at}
   end
   
   
