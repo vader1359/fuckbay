@@ -11,7 +11,11 @@
       <div class="column blank-part"></div>
       <div class="color-part">
         <div style="background-color: black" class="left-img">
-          <%= image_tag current_user.profile_url %>
+          <% if current_user.profile_url.present? %>
+            <%= image_tag current_user.profile_url %>
+          <% else %>
+            <%= image_tag "avatar.png" %>z
+          <% end %>
         </div>
         
         <div class="mid-triangles">
@@ -39,7 +43,11 @@
       
       <div class="adding-friend">
         <div class="friend-img">
+          <% if user.profile_url.present? %>
           <%= image_tag user.profile_url %> 
+          <% else %>
+          <%= image_tag "avatar.png" %>
+          <% end %>
         </div>
         <div class="friend-name"><%= user.name %></div>
         <% if Friendship.where(["user_id = ? and friend_id = ?", current_user.id, user.id]).present? %>
