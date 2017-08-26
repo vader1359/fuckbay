@@ -4,11 +4,5 @@ class Message < ApplicationRecord
   belongs_to :recipient, class_name: "User"
 
 
-  def is_received_message?
-    if self.recipient_id == User.first.id
-      true
-    else
-      false
-    end
-  end
+ 
 end

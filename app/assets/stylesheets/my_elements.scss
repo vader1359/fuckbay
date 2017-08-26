@@ -111,13 +111,20 @@
 }
 
 
-
 .my-black-btn {
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
   display: flex;
   align-items: center;
+}
+
+.my-mini-black-btn {
+  width: 88px;
+  height: 39px;
+  line-height: 39px;
+  font-size: $small-btn;
+  font-weight: 500;
 }
 
 

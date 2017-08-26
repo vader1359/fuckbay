@@ -161,59 +161,7 @@
 }
 
 
-.chat-content {
-  padding: 20px;
-  padding-top: 30px;
-  overflow: auto;
-  
-  .received-message-box {
-    background-color: rgba(1, 1, 1, 0);
-    width: 430px;
-    height: 45px;
-    display: flex;
-    line-height: 45px;
-    margin-left: auto;
-    margin-right: auto;
-    flex-direction: row-reverse;
-    margin-bottom: 15px;
-    
-    .received-message{
-      text-align: right;
-      font-size: $my-text;
-      padding-right: 15px;
-      padding-left: 15px;
-      background-color: $dark-primary-color;
-      color: $white-color;
-      
-    }
-  }
-  
-  
-  .sent-message-box {
-    background-color: rgba(1, 1, 1, 0);
-    // background-color: blue;
-    width: 430px;
-    height: 45px;
-    display: flex;
-    line-height: 45px;
-    margin-left: auto;
-    margin-right: auto;
-    flex-direction: row;
-    margin-bottom: 15px;
-    .sent-message {
-      text-align: left;
-      font-size: $my-text;
-      padding-right: 15px;
-      padding-left: 15px;
-      background-color: #B9B7BA;
-      color: $dark-primary-color;
-      
-    }
-  }
-  
-  
-  
-}
+
 
 .content-part {
   width :1647px;
@@ -224,9 +172,7 @@
   right: 0px;
   height: auto;
   overflow: visible;
-  .post-content {
-    
-  }
+  
   .suggest-content {
     background-color: $dark-primary-color;
     position: absolute;

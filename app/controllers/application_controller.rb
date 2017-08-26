@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :list_friendship_img
   helper_method :check_current_user
+  helper_method :is_received_message?
   
   protected
   
@@ -28,6 +29,14 @@ class ApplicationController < ActionController::Base
       redirect_to "/sign_in"
     end
     
+  end
+
+  def is_received_message?(message)
+    if message.recipient_id == current_user.id
+      true
+    else
+      false
+    end
   end
   
 end
