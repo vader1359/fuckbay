@@ -5,16 +5,19 @@
 .form-background { 
   background-color: $primary-color;
   min-width: 560px;
+  max-width: 960px;
+  // align-self: flex-end;
   bottom: 0px;
   position: absolute;
-  height: 66%;
+  height: 70%;
+  min-height: 630px;
   .guide-text {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     font-size: $sub-header;
     margin-top: 50px;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
     font-weight: bolder;
   }
   .input-box {
@@ -22,32 +25,29 @@
     border: none;
     border-color: none;
     margin-bottom: 15px;
-    height: 68px;
+    height: 60px;
     font-size: $my-text;
     padding-left: 30px;
     padding-right: 30px;
   }
   
-  .two-options-btn {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 40px;
-  }
 }
 
 // THE MATCH IMAGE
 
 .match-img {
   min-width: 380px;
+  max-width: 582px;
   background-color: rgba(1, 1, 1, 0);
   height: 120px;
-  margin-top: -35px;
+  margin-top: -24px;
   margin-left: auto;
   margin-right: auto;
   .blank-part {
     background-color: rgba(1, 1, 1, 0);
     height: 20px;
   }
+  
   .color-part {
     display: flex;
     justify-content: space-around;
@@ -56,14 +56,12 @@
     background: linear-gradient(90deg, #4A90E2 50%, #FF8844 50%);
     
     .left-img {
-      margin: -25px;
+      margin-top: -25px;
       margin-left: 10px;
       width: 125px;
       height: 125px;
       padding: 5px;
       background-color: #4A90E2 !important;
-
-      
     }
     
     
@@ -82,7 +80,6 @@
         border-width: 100px 50px 0 0;
         border-color: #4A90E2 transparent transparent transparent;
         z-index: -1;
-        
       }
       
       .link-image {
@@ -98,158 +95,29 @@
           top: 50%;
           transform: translateY(-50%);
           margin: auto;
-          
         }
-        
       }
-      
     }
     
     .right-img {
-      margin: -25px;
+      margin-top: -25px;
       width: 125px;
       height: 125px;
       margin-right: 10px;
       padding: 5px;
       background-color: #FF8844 !important;
-      
     }
   }
 }
 
-// THE TWO-OPTIONS BUTTON
 
-.two-options-btn {
-  margin-left: 100px;
-  width: 350px;
-  padding: 8px;
-  padding-right: 0px;
-  height: 50px;
-  background-color: $dark-primary-color;
+
+.my-black-btn {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
   display: flex;
   align-items: center;
-  
-  .two-btns {
-    display: flex;
-    
-    
-    .left-btn {
-      height: 34px;
-      line-height: 34px;
-      width: 96px;
-      background-color: $secondary-color;
-      color: $dark-primary-color;
-      font-size: $medium-btn;
-      align-self: center;
-      text-align: center;
-      
-    }
-    .right-btn {
-      background-color: $dark-primary-color;
-      width: 243px;
-      color: $white-color;
-      font-size: $big-btn;
-      align-self: center;
-      text-align: center;
-      
-    }
-  }
-}
-
-// THE CHATBOX
-
-
-.chat-box {
-  padding-left: 0px;
-  padding-right: 0px;
-  margin-left: 500px;
-  height: 660px;
-  background: rgba(1, 1, 1, 0);
-  bottom: 0px;
-  .blank-part {
-    background-color: rgba(1, 1, 1, 0);
-    height: 20px;
-  }
-  .color-part {
-    height: 122px;
-    background-color: $dark-primary-color;
-    position: relative;
-    display: flex;
-    
-    .profile-img {
-      width: 142px;
-      height: 142px;
-      background-color: $dark-primary-color;
-      float: left;
-      margin-top: -20px;
-      position: absolute;
-      left: 35px;
-      padding: 7px;
-
-    }
-    .friend-name {
-      height: 122px;
-      line-height: 122px;
-      font-size: $header;
-      display: flex;
-      color: white;
-      position: absolute;
-      left: 200px;
-      font-family: "SquareFont";
-      
-    }  
-  }
-  .chat-content {
-    background-color: $primary-color;
-    height: 450px;
-  }
-  
-  .chat-controller {
-    background-color: $primary-color;
-    height: 56px;
-    position: relative;
-    .chat-input {
-      position: absolute;
-      left: 0px;
-      height: 56px;
-      width: 385px;
-      background-color: $white-color;
-      
-    }
-    .send-btn {
-      background-color: $dark-primary-color;
-      position: absolute;
-      right: 0px;
-      border: none;
-      width: 88px;
-      height: 39px;
-      top: 50%;
-      transform: translateY(-50%);
-      text-align: center;
-      line-height: 39px;
-      color: $white-color;
-      font-size: $medium-btn;
-      font-weight: 500;
-      
-    }
-  }
-  
-}
-
-.text-black-btn {
-  border: none;
-  background-color: rgba(1, 1, 1, 0);
-  color: $white-color;
-  font-size: $big-btn;
-  margin-bottom: 3px;
-}
-
-.text-white-btn {
-  border: none;
-  background-color: rgba(1, 1, 1, 0);
-  color: $dark-primary-color;
-  font-size: $small-btn;
-  margin-bottom: 3px;
 }
 
 
@@ -310,4 +178,7 @@
             
             
             
-
+            
+            
+            
+        

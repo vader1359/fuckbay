@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   post 'comments/create'
   
-  get "/test" => "users#test" # For testing UI
+  
   
   
   devise_for :users # This handle all the Login, Log up, Log out and Forget password problem.
@@ -11,6 +11,11 @@ Rails.application.routes.draw do
     get "sign_up", to: "devise/registrations#new"
     get "sign_in", to: "devise/sessions#new"
     get "sign_out", to: "devise/sessions#destroy"
+    
+    authenticate :user do
+      get "/test" => "users#test" # For testing UI
+    end
+    
   end
   
   get "/newsfeed" => "users#newsfeed"

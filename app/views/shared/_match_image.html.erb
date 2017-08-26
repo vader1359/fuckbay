@@ -1,7 +1,13 @@
-  <div class="match-img is-paddingless">
+<div class="match-img column is-7 is-paddingless">
     <div class="column blank-part"></div>
     <div class="color-part">
       <div style="background-color: black" class="left-img">
+
+        <% if current_user && current_user.profile_url.present? %>
+          <%= image_tag current_user.profile_url %>
+        <% else %>
+          <%= image_tag "avatar.png" %>
+        <% end %>
       </div>
       
       <div class="mid-triangles">
@@ -16,6 +22,7 @@
       </div>
       
       <div style="background-color: white" class="right-img">
+        <%= image_tag get_sample_user_image %>
       </div>
     </div>
   </div>

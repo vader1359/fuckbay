@@ -1,0 +1,44 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= devise_error_messages! %>
+
+<div class="columns is-centered">
+  
+  <div class="column is-6 form-background">
+    
+    <div class="columns is-centered">
+      <%= render "shared/match_image"%>
+    </div>
+    
+    <div class="guide-text column is-centered is-8 "> 
+      <h1 class="is-size-3">You don’t have an account yet.<br>Do you want to sign up with</h1> 
+    </div>
+    
+    <div class="input-items columns is-centered">
+      <div class="column is-8">
+        <div class="field">
+            <div class="control">
+                <%= f.text_field :name, class: "input input-box", placeholder: "Name" %>
+              </div>
+          <div class="control">
+            <%= f.email_field :email, class: "input input-box", placeholder: "Email" %>
+          </div>
+          <div class="control">
+            <%= f.password_field :password, class: "input input-box", placeholder: "Password" %>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <%= f.submit "Sign up", class: "button column is-4 is-primary my-black-btn is-large" %>
+    
+    
+    <div class="tan">
+      <div class="tancuipap">
+        <div class="tansiucuipap"></div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+<% end %>
