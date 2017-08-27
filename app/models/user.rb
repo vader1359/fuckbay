@@ -50,6 +50,8 @@ class User < ApplicationRecord
   # messages = Message.where("(sender_id = ? AND recipient_id = ?) OR (sender_id = ? and recipient_id = ?)", friend_id, id, id, friend_id).order("updated_at DESC")
   end
 
+ 
+
   
 
  

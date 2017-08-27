@@ -8,7 +8,7 @@
     
   </div>
   <div class="chat-container">
-    <div class="chat-content">
+  <div class="chat-content">
       <% current_user.my_messages_with(friend.id).each do |message| %>
       <% if is_received_message?(message) %>
       <div class="received-message-box">
