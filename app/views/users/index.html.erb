@@ -31,38 +31,23 @@
 
 <!-- MAIN PART IS HERE -->
 
-<div class="content-part">
-  <div class="post-content">
-    
-      <%= form_tag posts_path do %>
-      Us<%= text_area_tag :body, nil, placeholder: "Enter a new post" %>
-      <%= hidden_field_tag :author_id, current_user.id %>
-      <%= hidden_field_tag :wall_id, current_user.id %>
-      <%= submit_tag "POST" %>
+
+<%= form_tag posts_path do %>
+Us<%= text_area_tag :body, nil, placeholder: "Enter a new post" %>
+<%= hidden_field_tag :author_id, current_user.id %>
+<%= hidden_field_tag :wall_id, current_user.id %>
+<%= submit_tag "POST" %>
+<% end %>
+<div class="posts">
+  
+  <div class="post-part columns">
+    <div class="white-part column is-8 ">
+      <% @newsfeed_posts.each do |post| %>
+      <%= render "post", post: post %>
       <% end %>
-      <div class="posts">
-        
-        <% @newsfeed_posts.each do |post| %>
-        <div>
-          <strong><%= post.body %></strong>
-          <%= form_tag comments_create_path do %>
-          <%= text_area_tag :body, nil, placeholder: "Enter the comment" %>
-          <%= hidden_field_tag :post_id, post.id %>
-          <%= hidden_field_tag :user_id, current_user.id %>
-          <%= submit_tag "COMMENT" %>
-          <% end %>
-          
-          <div><%="like_post: #{post.likes.count}"%></div>
-          <%= link_to "LIKE POST", likes_toggle_path(id: post.id, item_type: "post"), method: "post", class: "button is-primary" %>
-          <% post.comments.each do |comment| %>
-          <span><%=comment.body%></span><span><%=" like_comment: #{comment.likes.count}"%></span>
-          <%= link_to "LIKE COMMENT", likes_toggle_path(id: comment.id, item_type: "comment"), method: "post", class: "button is-primary is-small" %>
-          
-          <% end %>
-        </div>
-        <% end %>
-      </div>
+    </div>
+    <div class="black-part column is-4"></div>
+    
   </div>
-  <div class="suggest-content"></div>
 </div>
 

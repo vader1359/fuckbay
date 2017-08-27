@@ -9,7 +9,7 @@ body, html {
 }
 
 .post-part {
-  background:orange;
+  // background:orange;
   display: flex;
   top: 25%;
   position: absolute;
@@ -29,7 +29,7 @@ body, html {
     // position: relative;
     
     .post-box {
-      background: yellowgreen;
+      // background: yellowgreen;
       // height: auto;
       margin-left: auto;
       margin-right: auto;
@@ -38,6 +38,7 @@ body, html {
       // margin-bottom: 150px;
       margin-top: 50px;
       position: relative;
+      margin-bottom: 400px;
       
       
       
@@ -45,13 +46,13 @@ body, html {
       .post-inside {
         width: 100%;
         min-height: 100%;
-        background: green;
+        // background: green;
         position: relative;
         margin-bottom: 200px;
-        height:100%;
-        background:black; 
         overflow: visible;
         min-height:100%; 
+        // BIG BIG BIG error here
+        height: 800px;
 
         .post-header {
           height: 140px;
@@ -94,7 +95,7 @@ body, html {
           overflow: visible;
           min-height:100%; 
           .post-content {
-            background-color: gray;
+            background-color: $white_color;
             height: 100%;
             width: 80%;
             position: absolute;
@@ -117,7 +118,7 @@ body, html {
             }
           }
           .post-controller {
-            background-color: rgba(100, 40, 100, 0.5);
+            background-color: $white_color;
             height: 100%;
             align-self: flex-end;
             width: 20%;
@@ -125,8 +126,12 @@ body, html {
             right: 0px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             min-height:100%; 
+
+            .button {
+              margin-bottom: 10px;
+            }
           }
         }
         

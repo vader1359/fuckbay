@@ -1,4 +1,3 @@
-
 <div class="post-box column is-10 is-paddingless">
     <div class="post-inside">
       <div class="post-header is-12">
@@ -6,12 +5,12 @@
         <div class="color-part">
           <%= post.author.name %>
         </div>
-        <%= image_tag User.first.profile_url %>
+        <%= image_tag post.author.profile_url %>
       </div>
       <div class="anything">
         <div class="post-content">
           <div class="post-text column is-10">
-              <%= post.body %>
+            <%= post.body %>
           </div>
           
           <div class="post-img column is-10">
@@ -21,8 +20,8 @@
         </div>
         
         <div class="post-controller is-2">
-          <%= link_to "LIKE", test_path, class: "button is-primary" %>
-          <%= link_to "SHARE", test_path, class: "button is-primary" %>
+          <%= link_to "LIKE", users_path, class: "button is-primary" %>
+          <%= link_to "SHARE", users_path, class: "button is-primary" %>
         </div>
       </div>
       
