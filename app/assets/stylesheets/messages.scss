@@ -8,6 +8,7 @@
   position: absolute;
   right: 0px;
   left: 270px;
+  background: rgba(1, 1, 1, 0);
   background: orange;
   bottom: 0px;
   height: 70%;
@@ -17,6 +18,10 @@
   width: 100%;
   display: flex;
   flex-direction: row;
+  overflow-y: auto;
+  overflow-x: hidden;
+  white-space: nowrap;
+  
   
   .chat-box {
     width: 542px;
@@ -24,27 +29,27 @@
     min-width: 542px;
     // display: flex;
     background: rgba(1, 1, 1, 0);
-    background: blue;
     margin-right: 30px;
     position: relative;
     // flex: column;
     
     .chat-box-header {
       height: 18%;
-      background: yellow;
+      background: rgba(1, 1, 1, 0);
       .blank-part {
         height: 20px;
         
-        background-color: gray;
+        background-color: rgba(1, 1, 1, 0);
         width: 100%;
       }
       
       .color-part {
         width: 100%;
         height: 120px;
-        background: red;
+        background: $dark-primary-color;
         line-height: 120px;
         font-size: $header;
+        color: $white-color;
         font-family: "SquareFont";
         padding-left: 200px;
       }
@@ -58,10 +63,8 @@
         z-index: 1;
         float: left;
         border: 10px;
-        border:5px solid #021a40;
+        border:5px solid $dark-primary-color;
       }
-      
-      
     }
     
     .chat-container {
@@ -73,7 +76,7 @@
 
       .chat-content {
         
-        background: purple;
+        background: $primary-color;
         padding-top: 30px;
         padding-bottom: 30px;
         overflow: auto;
@@ -135,7 +138,7 @@
     }
     
     .chat-box-controller {
-      background: pink;
+      background: $primary-color;
       height: 56px;
       width: 100%;
       position: absolute;
@@ -146,9 +149,7 @@
         position: relative;
         width: 100%;
         height: 100%;
-        
-        
-        
+
         .chat-box-input {
           background: white;
           width: 439px;
@@ -170,14 +171,6 @@
           transform: translateY(-50%)
         }
       }
-      
-      
-      
-      
-      
     }
-    
-    
   }
-  
 }
