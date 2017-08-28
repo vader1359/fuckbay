@@ -1,11 +1,68 @@
+
+<% @friend_list_img = User.all.map {|user| user.profile_url }%>
+<% friend_list = User.all %>
+<% @newsfeed_posts = Post.all %>
+
+<div class="friend_list">
+  <% @friend_list_img.each do |image| %>
+  <%= image_tag "#{image}" %>
+  <% end %>
+</div>
+
+<div class="nav-bar">
+  <div class="user-profile">
+    <% if current_user.profile_url.present? %>
+    <%= image_tag current_user.profile_url %>
+    <% else %>
+    <%= image_tag "avatar.png" %>
+    <% end %>
+    
+  </div>
+  <div class="newsfeed-btn">
+    <%= link_to image_tag("news_feed.png"), users_path, style: "filter: invert(80%)"  %>
+  </div>
+  <div class="messages-btn">
+    <%= link_to image_tag("messages.png"), messages_path  %>
+    
+  </div>
+</div>
+
+<div class="friend_list">
+  <% @friend_list_img.each do |image| %>
+  <%= image_tag "#{image}" %>
+  <% end %>
+</div>
+
+
+<!-- MAIN PART IS HERE -->
+
+
+
+
+
+<div class="posts">
+  
   <div class="post-part columns">
     <div class="white-part column is-8 ">
-      
+
+        <%= form_tag posts_path do %>
+        <div class="new-post column is-10">
+          <div class="blank-part">
+
+          </div>
+        </div>
+        Us<%= text_area_tag :body, nil, placeholder: "Enter a new post" %>
+        <%= hidden_field_tag :author_id, current_user.id %>
+        <%= hidden_field_tag :wall_id, current_user.id %>
+        <%= submit_tag "POST" %>
+        <% end %>
+
+      <% @newsfeed_posts.each do |post| %>
+      <%= render "post", post: post %>
+      <% end %>
     </div>
-    
-    
     <div class="black-part column is-4"></div>
     
   </div>
-  
-  
+</div>
+
