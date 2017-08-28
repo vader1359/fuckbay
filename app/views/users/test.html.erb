@@ -44,19 +44,40 @@
   
   <div class="post-part columns">
     <div class="white-part column is-8 ">
-
-        <%= form_tag posts_path do %>
-        <div class="new-post column is-10">
-          <div class="blank-part">
-
+      
+      
+      
+      <article style="margin-bottom: 20px; margin-top: 20px;" class="media column is-10 please-centered">
+        <figure class="media-left">
+          <p class="image is-64x64">
+            <%= image_tag current_user.profile_url %>
+          </p>
+        </figure>
+        
+        <div class="media-content">
+            
+          <div class="field">
+              <%= form_tag posts_path do %>
+            <p class="control">
+              <%= text_area_tag :body, nil, placeholder: "Enter a new post", class:"textarea" %>
+              <%= hidden_field_tag :author_id, current_user.id %>
+              <%= hidden_field_tag :wall_id, current_user.id %>
+            </p>
           </div>
+          <nav class="level">
+            <div class="level-left">
+              <div class="level-item">
+                <%= submit_tag "POST", class: "button is-primary" %>
+              </div>
+            </div>
+            <% end %>
+          </nav>
+          
         </div>
-        Us<%= text_area_tag :body, nil, placeholder: "Enter a new post" %>
-        <%= hidden_field_tag :author_id, current_user.id %>
-        <%= hidden_field_tag :wall_id, current_user.id %>
-        <%= submit_tag "POST" %>
-        <% end %>
-
+        
+      </article>
+      
+      
       <% @newsfeed_posts.each do |post| %>
       <%= render "post", post: post %>
       <% end %>

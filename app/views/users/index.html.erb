@@ -7,9 +7,9 @@
 <div class="nav-bar">
   <div class="user-profile">
     <% if current_user.profile_url.present? %>
-      <%= image_tag current_user.profile_url %>
+    <%= image_tag current_user.profile_url %>
     <% else %>
-      <%= image_tag "avatar.png" %>
+    <%= image_tag "avatar.png" %>
     <% end %>
     
   </div>
@@ -30,18 +30,39 @@
 
 
 <!-- MAIN PART IS HERE -->
-
-
-<%= form_tag posts_path do %>
-Us<%= text_area_tag :body, nil, placeholder: "Enter a new post" %>
-<%= hidden_field_tag :author_id, current_user.id %>
-<%= hidden_field_tag :wall_id, current_user.id %>
-<%= submit_tag "POST" %>
-<% end %>
 <div class="posts">
   
   <div class="post-part columns">
     <div class="white-part column is-8 ">
+      <article style="margin-bottom: 20px; margin-top: 20px;" class="media column is-10 please-centered">
+        <figure class="media-left">
+          <p class="image is-64x64">
+            <%= image_tag current_user.profile_url %>
+          </p>
+        </figure>
+        
+        <div class="media-content">
+          
+          <div class="field">
+            <%= form_tag posts_path do %>
+            <p class="control">
+              <%= text_area_tag :body, nil, placeholder: "Enter a new post", class:"textarea" %>
+              <%= hidden_field_tag :author_id, current_user.id %>
+              <%= hidden_field_tag :wall_id, current_user.id %>
+            </p>
+          </div>
+          <nav class="level">
+            <div class="level-left">
+              <div class="level-item">
+                <%= submit_tag "POST", class: "button is-primary" %>
+              </div>
+            </div>
+            <% end %>
+          </nav>
+        </div>
+      </article>
+      
+      
       <% @newsfeed_posts.each do |post| %>
       <%= render "post", post: post %>
       <% end %>
@@ -50,4 +71,3 @@ Us<%= text_area_tag :body, nil, placeholder: "Enter a new post" %>
     
   </div>
 </div>
-
