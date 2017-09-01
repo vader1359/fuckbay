@@ -37,7 +37,13 @@
       <article style="margin-bottom: 20px; margin-top: 20px;" class="media column is-10 please-centered">
         <figure class="media-left">
           <p class="image is-64x64">
-            <%= image_tag current_user.profile_url %>
+            <% if current_user.present? %>
+              <% if current_user.profile_url.present? %>
+                <%= image_tag current_user.profile_url %>
+              <% else %>
+                <%= image_tag avatar.png %>
+              <% end %>
+            <% end %>
           </p>
         </figure>
         
