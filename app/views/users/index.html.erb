@@ -41,7 +41,7 @@
               <% if current_user.profile_url.present? %>
                 <%= image_tag current_user.profile_url %>
               <% else %>
-                <%= image_tag avatar.png %>
+                <%= image_tag "avatar.png" %>
               <% end %>
             <% end %>
           </p>
