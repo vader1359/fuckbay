@@ -1,8 +1,10 @@
 class MessagesController < ApplicationController
   def index
-    @friend_list_img = list_friendship_img(current_user)
-    
-    @chatting_friends = get_chatting_friends(current_user)
+    if current_user.present? 
+      @chatting_friends = get_chatting_friends(current_user)
+    else
+      @chatting_friends = []
+    end
     
   end
   
@@ -21,7 +23,11 @@ class MessagesController < ApplicationController
     recipient_list = user.sent_messages.map {|message| message.recipient_id}
     sender_list = user.received_messages.map {|message| message.sender_id}
     @chatting_friend_ids = (recipient_list + sender_list).uniq!
-    chatting_friends = @chatting_friend_ids.map {|id| User.find(id)}
+    if @chatting_friends_ids != nil
+      chatting_friends = @chatting_friend_ids.map {|id| User.find(id)}
+    else
+      chatting_friends = []
+    end
   end
   
   

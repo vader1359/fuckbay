@@ -27,14 +27,13 @@
       
     </div>
     
-    <%= f.submit "Sign in", class: "button column is-4 is-primary my-black-btn is-large" %>
-    
-    
-    <div class="tan">
-      <div class="tancuipap">
-        <div class="tansiucuipap"></div>
-      </div>
+    <div class="two-buttons column is-12">
+      
+      <%= link_to "Sign up", new_user_registration_path, class: "left-btn button is-primary is-outlined" %>
+      <%= f.submit "Sign in", class: "right-btn button is-primary"%>
     </div>
+    
+    
     
   </div>
 </div>

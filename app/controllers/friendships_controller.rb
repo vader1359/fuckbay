@@ -1,7 +1,6 @@
 class FriendshipsController < ApplicationController
   
   def new
-    @friend_list_img = list_friendship_img(current_user)
   end
   
   def create

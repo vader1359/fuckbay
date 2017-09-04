@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   
   
   
-  devise_for :users # This handle all the Login, Log up, Log out and Forget password problem.
+  devise_for :users, controllers: { registrations: "users/registrations" } # This handle all the Login, Log up, Log out and Forget password problem.
   devise_scope :user do
     get "sign_up", to: "devise/registrations#new"
     get "sign_in", to: "devise/sessions#new"

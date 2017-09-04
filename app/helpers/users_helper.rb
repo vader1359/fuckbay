@@ -1,5 +1,11 @@
 module UsersHelper
   def get_sample_user_image
-    User.all.sample.profile_url
+    image = User.all.sample.profile_url
+    if image != nil
+      image
+    else
+      image = "avatar.png"
+    end
+    
   end
 end

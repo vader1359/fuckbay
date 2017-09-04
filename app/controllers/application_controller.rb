@@ -1,10 +1,13 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
-  
-  protect_from_forgery with: :exception
+  before_action :make_friend_list
+  protect_from_forgery with: :exception 
   helper_method :list_friendship_img
   helper_method :check_current_user
   helper_method :is_received_message?
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  # protect_from_forgery with: :null_session
+  skip_before_action :verify_authenticity_token
   
   protected
   
@@ -21,7 +24,20 @@ class ApplicationController < ActionController::Base
   end
   
   def make_friend_list
-    @friend_list_img = list_friendship_img(current_user)
+    if current_user.present?
+      @friend_list_img = list_friendship_img(current_user)
+    else
+      @friend_list_img = User.all.shuffle[0..6].map {|user| user.profile_url}
+    end
+    
+  end
+  
+  def default_profile(friend_list_img)
+    friend_list_img.each do |image|
+      if image = nil
+        image = "avatar.png"
+      end
+    end
   end
   
   def check_current_user
@@ -30,7 +46,7 @@ class ApplicationController < ActionController::Base
     end
     
   end
-
+  
   def is_received_message?(message)
     if message.recipient_id == current_user.id
       true

@@ -1,20 +1,30 @@
-<div class="friend-list">
-  <img src="<%= asset_path("friend_list.png")%>" alt="friend list">
-</div>
 
-<div class="welcome-img">
-  <img src="<%= asset_path("welcome_img.png")%>" alt="welcome image">
-  <div class="welcome two-options-btn">
-    <div class="two-btns">
-      <div class="left-btn">
-        <%= link_to "Sign up", new_user_registration_path, class: "text-white-btn" %>
-      </div>
-      <div class="right-btn">
-        <%= link_to "Sign in", new_user_session_path, class: "text-black-btn"  %>
-      </div>
-    </div>
+
+<div class="welcome-content columns level">
+  <div  class="welcome-img column is-4 is-offset-2 level">
+    <img src="<%= asset_path("welcome_img.png")%>" alt="welcome image">
   </div>
   
+  <div class="welcome-text column is-3 is-centered">
+    <img src="<%= asset_path("welcome_text.png")%>" alt="welcome text">
+    <div class="two-buttons column is-8 is-offset-1 is-centered">
+      
+        <div><%= link_to "Sign up", new_user_registration_path, class: "left-btn button is-primary is-outlined  " %></div>
+        <div><%= link_to "Sign in", new_user_session_path, class: "right-btn button is-primary"%></div>
+    </div>
+    
+  </div>
+  <div class="column is-1">
+    
+  </div>
+  
+  
 </div>
+
+
+
+
+
+
 
 

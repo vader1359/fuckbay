@@ -9,7 +9,20 @@
 </head>
 
 <body>
-  <img class="nav-logo" src="/assets/logo.png" alt="home page">
+    <div class="nav-bar">
+        <%= link_to image_tag("logo.png"), root_path %>
+        <div class="friend-list">
+          
+          <% @friend_list_img.each do |image| %>
+          <% if image.present? %>
+          <%= image_tag image %>
+          <% else %>
+          <%= image_tag "avatar.png" %>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
+  
   <div><%=link_to "Log out", destroy_user_session_path, method: "delete" %></div>
 
   
