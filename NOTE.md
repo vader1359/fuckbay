@@ -36,9 +36,10 @@ FIRST STEP: LIST OUT ALL THE PROBLEMS LEFT
   * [x] ADD-FRIENDS PAGE
 
   * [ ] NEWSFEED
-    * [ ] Have not check current user available or not  
-    * [ ] Error Sign-in without profile image (becaused of devise)
-    * [ ] Need add more friends button
+    * [ ] The nav-bar on the left has problem
+    * [x] Have not check current user available or not  
+    * [x] Error Sign-in without profile image (becaused of devise)
+    * [ ] Need add more-friends button
     * [ ] The comment still not work
     * [ ] The like button is not work
     * [ ] The new post form is ugly
