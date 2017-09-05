@@ -1,7 +1,12 @@
 class MessagesController < ApplicationController
+  @@total_chatting_friends = []
   def index
     if current_user.present? 
+      
       @chatting_friends = get_chatting_friends(current_user)
+      if @@total_chatting_friends.count > @chatting_friends.count
+        @chatting_friends = @@total_chatting_friends
+      end
     else
       @chatting_friends = []
     end
@@ -17,6 +22,17 @@ class MessagesController < ApplicationController
       
       redirect_to messages_path
     end
+  end
+  
+  def add_chatbox
+    chat_user = User.find_by(profile_url: URI.decode(params[:profile_url]))
+    @@total_chatting_friends = get_chatting_friends(current_user) #Get chatting_friends
+    @@total_chatting_friends << chat_user 
+    @@total_chatting_friends
+    redirect_to messages_path
+  end
+  
+  def close_chatbox
   end
   
   def get_chatting_friends(user)

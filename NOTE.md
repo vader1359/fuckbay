@@ -36,16 +36,16 @@ FIRST STEP: LIST OUT ALL THE PROBLEMS LEFT
   * [x] ADD-FRIENDS PAGE
 
   * [ ] NEWSFEED
-    * [ ] The nav-bar on the left has problem
+    * [x] The nav-bar on the left has problem
     * [x] Have not check current user available or not  
     * [x] Error Sign-in without profile image (becaused of devise)
-    * [ ] Need add more-friends button
+    * [x] Need add more-friends button
     * [ ] The comment still not work
     * [ ] The like button is not work
     * [ ] The new post form is ugly
     * [ ] There is no info in the black part yet
-    * [x] Click on the chat part, there will be error if the friend_list is blank or chatting_friedn is blank
-    * [ ] The height of post is pixel, not auto
+    * [x] Click on the chat part, there will be error if the friend_list is blank or chatting_friedn is blank 
+    **[ ] THE HEIGHT OF POST IS PIXEL, NOT AUTO**
   
   * [ ] CHAT-SCREEN
     * [ ] Click on friend list, there should be a chatbox show up

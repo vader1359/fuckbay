@@ -34,7 +34,8 @@ Rails.application.routes.draw do
   
   get "/messages" => "messages#index"
   post "/messages/create" => "messages#create"
-  
+  post  "/messages/add_chatbox" => "messages#add_chatbox"
+  post "/messages/remove_chatbox" => "messages#remove_chatbox"
   
   
   
