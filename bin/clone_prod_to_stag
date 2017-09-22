@@ -1,0 +1,4 @@
+rails db:drop DISABLE_DATABASE_ENVIRONMENT_CHECK=1
+heroku pg:pull DATABASE_URL fukbay_development -r prod
+heroku pg:reset
+heroku pg:push fukbay_development -r stag

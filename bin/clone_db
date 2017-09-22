@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+rails db:reset
+heroku pg:pull DATABASE_URL fukbay_development --app safe-wildwood-48626

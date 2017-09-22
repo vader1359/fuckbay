@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+heroku pg:push mylocaldb DATABASE_URL --app safe-wildwood-48626
