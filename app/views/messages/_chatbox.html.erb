@@ -1,10 +1,20 @@
+<!-- $my-blue: #4A90E2;
+$my-purple: #8A4791;
+$my-red: #FD5F54;
+$my-orange: #FF8844;
+$my-green : #5FCF80;
+$my-brown: #755232;
+$my-yellow: #FEDF73; -->
+<% colors = ["#8A4791", "#4A90E2", "#FD5F54", "#FF8844", "#755232"] %>
+
+
 <div class="chat-box">
   <div class="chat-box-header">
     <div class="blank-part"></div>
-    <div class="color-part">
+    <div style="background-color: <%= colors.sample %>" class="color-part">
       <%= friend.name %>
     </div>
-    <%= image_tag friend.profile_url %>
+    <%= image_tag friend.profile_url%>
     
   </div>
   <div class="chat-container">

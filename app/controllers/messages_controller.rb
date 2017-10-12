@@ -1,14 +1,15 @@
 class MessagesController < ApplicationController
-  @@total_chatting_friends = []
   def index
+    # @chatting_friends = get_chatting_friends(current_user)
+    @chatting_friends = User.all[3..6]
     if current_user.present? 
-      
-      @chatting_friends = get_chatting_friends(current_user)
-      if @@total_chatting_friends.count > @chatting_friends.count
-        @chatting_friends = @@total_chatting_friends
+      if session[:new_chatbox] != nil
+        new_chat_user = User.find_by(profile_url: URI.decode(session[:new_chatbox]))
+        @chatting_friends << new_chat_user
       end
-    else
-      @chatting_friends = []
+      
+      # raise
+      @chatting_friends
     end
     
   end
@@ -26,14 +27,10 @@ class MessagesController < ApplicationController
   
   def add_chatbox
     chat_user = User.find_by(profile_url: URI.decode(params[:profile_url]))
-    @@total_chatting_friends = get_chatting_friends(current_user) #Get chatting_friends
-    @@total_chatting_friends << chat_user 
-    @@total_chatting_friends
+    session[:new_chatbox] = params[:profile_url]
     redirect_to messages_path
   end
   
-  def close_chatbox
-  end
   
   def get_chatting_friends(user)
     recipient_list = user.sent_messages.map {|message| message.recipient_id}

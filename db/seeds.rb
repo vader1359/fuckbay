@@ -23,8 +23,8 @@ User.all.sample.posts.create(body: "If Stereophile gave an award for Loudspeaker
 User.all.sample.posts.create(body: "If, like me, you're a dues-paying audiophile who's circumnavigated the upgrade block a few times, you've seen a lot of gear and set up many systems. I've carried 80-lb line conditioners up the six knee-crunching flights to my bachelor's penthouse, managed 50-lb loudspeakers downstairs to a waiting van, and made more trips to FedEx than I can count. I've owned dozens of audio products and reviewed dozens more.", wall_id: User.last.id)
 
 
-user_f.sent_messages.create(sender_id: user_f.id, recipient_id: user_l.id, body: "I have a dream")
-user_f.sent_messages.create(sender_id: user_f.id, recipient_id: user_l.id, body: "A song to sing")
+Message.create(sender_id: User.all[3..9], recipient_id: User.second.id, body: "Any plan on Thursday?")
+Message.create(sender_id: User.all[3..9], recipient_id: User.second.id, body: "Nice to meet you")
 
-user_l.sent_messages.create(sender_id: user_l.id, recipient_id: user_f.id, body: "Stop singing")
+Message.create(sender_id: User.all[3..9], recipient_id: User.second.id, body: "Hey dude, I need help!")
 
